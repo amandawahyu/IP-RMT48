@@ -9,17 +9,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      myMangaId: {
-        type: Sequelize.INTEGER
+      myManhwaAndMangaId: {
+        type: Sequelize.STRING
       },
       title: {
         type: Sequelize.STRING
       },
-      pictUrl: {
-        type: Sequelize.STRING
-      },
-      score: {
-        type: Sequelize.FLOAT
+      // coverArt: {
+      //   type: Sequelize.STRING
+      // },
+      description: {
+        type: Sequelize.TEXT
       },
       UserId: {
         type: Sequelize.INTEGER,

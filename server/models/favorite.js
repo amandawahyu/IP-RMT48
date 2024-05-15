@@ -9,10 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Favorite.init({
-    myMangaId: DataTypes.INTEGER,
+    myManhwaAndMangaId: DataTypes.STRING,
     title: DataTypes.STRING,
-    pictUrl: DataTypes.STRING,
-    score: DataTypes.FLOAT,
+    // coverArt: DataTypes.STRING,
+    description: DataTypes.TEXT,
     UserId: DataTypes.INTEGER
   }, {
     sequelize,
