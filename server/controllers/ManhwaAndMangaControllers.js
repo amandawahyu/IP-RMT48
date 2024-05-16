@@ -3,13 +3,33 @@ const authentication = require("../middleware/authentication");
 const axios = require("axios")
 
 class ManhwaAndMangaController {
+
     static async getAllManhwasAndMangas(req, res, next) {
         try {
             const response = await axios({
                 method: "GET",
                 url: "https://api.mangadex.org/manga?includedTagsMode=AND&excludedTagsMode=OR&contentRating%5B%5D=safe&contentRating%5B%5D=suggestive&contentRating%5B%5D=erotica&order%5BlatestUploadedChapter%5D=desc",
               })
-              res.json(response.data)
+              const mangaList = []
+              for (let index = 0; index < response.data.data.length; index++) {
+                const manga = response.data.data[index];
+                console.log(manga)
+                const updatedManga = {
+                    myManhwaAndMangaId: manga.id,
+                    title: manga.attributes.title.en,
+                    coverArt: manga.relationships.find(relationship => {
+                        return relationship.type === "cover_art"
+                    }),
+                    description: manga.attributes.description.en
+                }
+                const responseCover = await axios({
+                    method: "GET",
+                    url: "https://api.mangadex.org/cover/" + updatedManga.coverArt.id
+                })
+                updatedManga.coverArt.url = `https://uploads.mangadex.org/covers/${updatedManga.id}/${responseCover.data.data.attributes.fileName}`
+                mangaList.push(updatedManga)
+            }
+              res.json(mangaList)
         } catch (error) {
             console.log(error);
             next(error);

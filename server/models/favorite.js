@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   Favorite.init({
     myManhwaAndMangaId: DataTypes.STRING,
     title: DataTypes.STRING,
-    // coverArt: DataTypes.STRING,
+    coverArt: DataTypes.STRING,
     description: DataTypes.TEXT,
     UserId: DataTypes.INTEGER
   }, {

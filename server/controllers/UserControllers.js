@@ -87,7 +87,7 @@ class UserController {
             })
 
             await user.update({
-                imgUrl: result.secure_url
+                imageUrl: result.secure_url
             })
 
             res.status(200).json({ message: "Image Success to Update" })
