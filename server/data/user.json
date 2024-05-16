@@ -1,0 +1,18 @@
+[
+    {
+        "username": "abangku",
+        "email": "abangku@provider.com",
+        "password": "abangku",
+        "imageUrl": "https://cdn.vox-cdn.com/thumbor/4E98u_RfYxa8pkRK79CyPClFABY=/0x0:1147x647/1200x800/filters:focal(483x233:665x415)/cdn.vox-cdn.com/uploads/chorus_image/image/70742090/Jotaro.0.jpeg",
+        "phoneNumber": "123789456",
+        "address": "jl.Bumi suka suka saya rugi dong!"
+    },
+    {
+        "username": "menyala",
+        "email": "menyala@provider.com",
+        "password": "menyala",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjT_Yxx4ptnNqk9e2nIJ6w_HRI5y-mzqAlgg&s",
+        "phoneNumber": "987654321000",
+        "address": "jl. mana saya tau, saya kan ikan"
+    }
+]
