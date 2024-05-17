@@ -26,7 +26,7 @@ class ManhwaAndMangaController {
                     method: "GET",
                     url: "https://api.mangadex.org/cover/" + updatedManga.coverArt.id
                 })
-                updatedManga.coverArt.url = `https://uploads.mangadex.org/covers/${updatedManga.id}/${responseCover.data.data.attributes.fileName}`
+                updatedManga.coverArt.url = `https://uploads.mangadex.org/covers/${updatedManga.myManhwaAndMangaId}/${responseCover.data.data.attributes.fileName}`
                 mangaList.push(updatedManga)
             }
               res.json(mangaList)
