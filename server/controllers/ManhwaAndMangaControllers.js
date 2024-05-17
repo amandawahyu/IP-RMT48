@@ -106,7 +106,7 @@ class ManhwaAndMangaController {
             });
 
             res.status(200).json({
-                message: `${favorite.title} has been deleted `,
+                message: `${favorite.title} deleted `,
             });
         } catch (error) {
             console.log(error);
