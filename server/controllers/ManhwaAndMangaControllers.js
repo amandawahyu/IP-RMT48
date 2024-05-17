@@ -99,15 +99,14 @@ class ManhwaAndMangaController {
     static async deleteFavoriteManhwaAndManga(req, res, next) {
         try {
             const { id } = req.params;
-            // console.log(id, "id favorite");
-            const favorite = await Favorite.findByPk(id);
+            const favorite = await Favorite.findOne({where: {myManhwaAndMangaId:id}});
             if (!favorite) throw { name: "NotFound" };
             await Favorite.destroy({
-                where: { id: id },
+                where: { myManhwaAndMangaId: id },
             });
 
             res.status(200).json({
-                message: `${favorite.title} has been deleted `,
+                message: `${favorite.title} deleted `,
             });
         } catch (error) {
             console.log(error);
